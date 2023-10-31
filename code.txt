@@ -1,0 +1,58 @@
+#include <iostream>
+#include "windows.h"
+#include <stdio.h>
+
+
+using namespace std;
+
+int main()
+{
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+
+    //Завдання 1
+    printf("Завдання 1:");
+
+    double a, b, c, x;
+    printf("\nВведіть числа (a,b,c,x): ");
+
+    scanf_s("%lf %lf %lf %lf", &a, &b, &c, &x);
+
+    printf("a = %.1lf\nb = %.1lf\nc = %.1lf\nx = %.1lf\n", a,b,c,x);
+
+    double f = 0;
+
+    if (x == 0 || b != 0) {
+        f = a * pow(x + c, 2) - b;
+        cout << "Виконалась 1 умова";
+    }
+    else if (x == 0 && b == 0 && c != 0) {
+        f = (x - a) / -c;
+        cout << "Виконалась 2 умова";
+    }
+    else if (c != 0) {
+        f = a + x / c;
+        cout << "Виконалась 3 умова";
+    }
+
+    printf("\nЗначення функції F = %lf", f);
+
+    //Завдання 2
+    printf("\n\nЗавдання 2:");
+    int num;
+    printf("\nВведіть номер планети (1 - 8): ");
+    scanf_s("%d", &num);
+    
+    printf("Ваша планета за номером %d це - ", num);
+
+    switch (num) {
+    case 1: cout << "Меркурій"; break;
+    case 2: cout << "Венера"; break;
+    case 3: cout << "Земля"; break;
+    case 4: cout << "Марс"; break;
+    case 5: cout << "Юпітер"; break;
+    case 6: cout << "Сатурн"; break;
+    case 7: cout << "Уран"; break;
+    case 8: cout << "Нептун"; break;
+    }
+}
